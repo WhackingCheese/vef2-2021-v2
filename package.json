@@ -4,6 +4,7 @@
   "description": "",
   "main": "./app.js",
   "scripts": {
+    "start": "nodemon ./src/app/js",
     "test": "concurrently npm:test:*",
     "dev": "nodemon ./src/app/js",
     "build:sass": "node-sass --source-map-enabled ./src/styles/styles.scss ./public/styles.css",
