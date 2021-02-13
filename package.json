@@ -4,9 +4,9 @@
   "description": "",
   "main": "./app.js",
   "scripts": {
-    "start": "nodemon ./src/app/js",
+    "start": "node ./app.js",
     "test": "concurrently npm:test:*",
-    "dev": "nodemon ./src/app/js",
+    "dev": "nodemon ./app.js",
     "build:sass": "node-sass --source-map-enabled ./src/styles/styles.scss ./public/styles.css",
     "sass-watch": "node-sass --source-map-embed --watch ./src/styles/styles.scss ./public/styles.css",
     "eslint": "eslint *js ./src/*.js --fix",
