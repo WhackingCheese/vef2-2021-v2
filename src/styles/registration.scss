@@ -1,0 +1,77 @@
+@import './vars.scss';
+
+.form {
+    font-size: 1em;
+
+    &_title {
+        display: flex;
+        font-size: 2.5em;
+        justify-content: center;
+    }
+
+    &_input {
+        &_exp {
+            display: inline-flex;
+            margin-top: 1em;
+            width: $label-width;
+        }
+
+        &_text {
+            background-color: $input-color;
+            height: 2em;
+            margin-top: 1em;
+            width: calc(100% - #{$label-width + 10px});
+        }
+
+        &_textr {
+            background-color: $input-error;
+            height: 2em;
+            margin-top: 1em;
+            width: calc(100% - #{$label-width + 10px});
+        }
+
+        &_textarea {
+            background-color: $input-color;
+            height: 4em;
+            margin-top: 1em;
+            width: calc(100% - #{$label-width + 10px});
+        }
+
+        &_textarear {
+
+            background-color: $input-error;
+            height: 4em;
+            margin-top: 1em;
+            width: calc(100% - #{$label-width + 10px});
+        }
+
+        &_anon {
+            margin-top: 18px;
+            display: inline-block;
+        }
+
+        &_submit {
+            background-color: $input-color;
+            border: 1px solid $font-color;
+            border-radius: 7px;
+            font-size: 1.5em;
+            height: 2em;
+            width: 8em;
+        }
+    }
+}
+
+.centering {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+.break {
+    width: 100%;
+    border-top: 1px dotted;
+}

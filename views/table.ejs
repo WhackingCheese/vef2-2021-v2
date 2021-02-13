@@ -1,0 +1,16 @@
+<div class="signatures">
+    <table class="table">
+        <tr class="table_title">
+            <th class="table_fr">Dags</th>
+            <th class="table_fr">Nafn</th>
+            <th class="table_fr">Athugasemd</th>
+        </tr>
+        <% signatures.forEach((signature) => { %>
+            <tr class="table_entry">
+                <td class="table_entry_date"><%= signature.signed %></td>
+                <td class="table_entry_name"><%= signature.name %></td>
+                <td class="table_entry_comment"><%= signature.comment %></td>
+            </tr>
+        <% }); %>
+    </table>
+</div>
