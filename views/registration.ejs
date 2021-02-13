@@ -33,6 +33,16 @@
                 <input type="submit" class="form_input_submit" value="Skrifa undir">
             </div>
         </form>
+        <% if (locals.validations.name || locals.validations.comment || locals.validations.ssid) { %>
+            <div class="errors">
+                <h3 class="errors_header">Villur við undirskrift:</h2>
+                <ul class="errors_list">
+                    <% data.forEach((issue) => { %>
+                        <li class="error_item"><%= issue %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% } %>
     </div>
     <hr class="break">
     <%- include('table.ejs') -%>

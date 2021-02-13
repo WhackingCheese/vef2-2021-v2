@@ -11,7 +11,8 @@ const router = express.Router();
 
 async function pageCreate(req, res) {
   const signatures = await selectAllNotAnon();
-  res.render('registration', { title, validations, signatures });
+  data = Object.values(validations);
+  res.render('registration', { title, validations, signatures, data});
   validations = {};
 }
 

@@ -61,6 +61,22 @@
     }
 }
 
+.errors {
+    &_header {
+        display: flex;
+        justify-content: center;
+    }
+
+    &_list {
+        text-align: center;
+        list-style: none;
+    }
+
+    &_item {
+        display: inline-block;
+    }
+}
+
 .centering {
     display: flex;
     justify-content: center;
