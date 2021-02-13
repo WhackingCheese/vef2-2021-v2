@@ -1,8 +1,21 @@
-const { Client } = require('pg');
+const pg = require('pg');
 const fs = require('fs');
 const util = require('util');
+const dotenv = require('dotenv');
 
-const connectionString = 'postgres://test:test@localhost'
+dotenv.config();
+
+const {
+  DATABASE_URL: connectionString,
+  NODE_ENV: nodeEnv = '',
+} = process.env;
+console.info('process.env :>> ', process.env.DATABASE_URL);
+if (!connectionString) {
+  console.error('Vantar DATABASE_URL!');
+  process.exit(1);
+}
+const ssl = nodeEnv !== 'development' ? { rejectUnauthorized: false } : false;
+const pool = new pg.Pool({ connectionString, ssl });
 
 const readFileAsync = util.promisify(fs.readFile);
 
@@ -22,8 +35,7 @@ async function selectAllNotAnon() {
 }
 
 async function query(q, values=[]) {
-  const client = new Client({ connectionString });
-  await client.connect();
+  const client = await pool.connect();
   try {
     const result = await client.query(q, values);
     return result;

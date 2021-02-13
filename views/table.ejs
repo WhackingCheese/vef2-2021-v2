@@ -7,7 +7,7 @@
         </tr>
         <% signatures.forEach((signature) => { %>
             <tr class="table_entry">
-                <td class="table_entry_date"><%= signature.signed %></td>
+                <td class="table_entry_date"><%= new Date(signature.signed).toLocaleDateString().replaceAll('/', '.') %></td>
                 <td class="table_entry_name"><%= signature.name %></td>
                 <td class="table_entry_comment"><%= signature.comment %></td>
             </tr>
