@@ -2,9 +2,14 @@ const path = require('path');
 const express = require('express');
 const registration = require('./src/registration');
 const { setup } = require('./src/db');
+const dotenv = require('dotenv');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+
+dotenv.config();
+
+const {
+  PORT: port = 3000,
+} = process.env;
 
 const app = express();
 app.use(express.static('public'));
@@ -18,6 +23,6 @@ app.use('/', registration);
 
 setup();
 
-app.listen(port, hostname, () => {
-  console.info(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+  console.info(`Server running at http://$localhost:${port}/`);
 });
