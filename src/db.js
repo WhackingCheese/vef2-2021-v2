@@ -26,7 +26,7 @@ async function insert(data) {
   VALUES
   ($1, $2, $3, $4)`;
   values = [data.name, data.ssid, data.comment, data.anon];
-  return query(q, values);
+  return query(q, values=values);
 }
 
 async function selectAllNotAnon() {
@@ -34,13 +34,12 @@ async function selectAllNotAnon() {
   return result;
 }
 
-async function query(q, values=[]) {
+async function query(q, values = []) {
   const client = await pool.connect();
   try {
     const result = await client.query(q, values);
     return result;
-  }
-  catch (err) {
+  } catch (err) {
     throw err;
   } finally {
     await client.end();
@@ -48,13 +47,13 @@ async function query(q, values=[]) {
 }
 
 async function setup() {
-  await query(`DROP TABLE IF EXISTS signatures`);
+  await query('DROP TABLE IF EXISTS signatures');
   try {
     const createTable = await readFileAsync('./src/sql/schema.sql');
     await query(createTable.toString('utf-8'));
     const insertData = await readFileAsync('./src/sql/fake.sql');
     await query(insertData.toString('utf-8'));
-  } catch(e) {
+  } catch (e) {
     console.error(e.message);
   }
 }
@@ -62,5 +61,5 @@ async function setup() {
 module.exports = {
   selectAllNotAnon,
   insert,
-  setup
-}
+  setup,
+};
