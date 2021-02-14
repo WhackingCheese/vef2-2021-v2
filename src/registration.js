@@ -42,7 +42,7 @@ async function register(req, res) {
     body: {
       name = '',
       ssid = '',
-      comment = '',
+      comment = ''
     } = {},
   } = await req;
   if (req.body.anon == null) {
