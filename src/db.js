@@ -19,31 +19,30 @@ const pool = new pg.Pool({ connectionString, ssl });
 
 const readFileAsync = util.promisify(fs.readFile);
 
+async function query(q, values = []) {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(q, values);
+    return result;
+  } finally {
+    await client.end();
+  }
+}
+
 async function insert(data) {
   const q = `
   INSERT INTO signatures
   (name, nationalId, comment, anonymous)
   VALUES
   ($1, $2, $3, $4)`;
-  values = [data.name, data.ssid, data.comment, data.anon];
-  return query(q, values=values);
+  const values = [data.name, data.ssid, data.comment, data.anon];
+
+  return query(q, values);
 }
 
 async function selectAllNotAnon() {
   const result = await (await query('SELECT * FROM signatures WHERE anonymous is false')).rows;
   return result;
-}
-
-async function query(q, values = []) {
-  const client = await pool.connect();
-  try {
-    const result = await client.query(q, values);
-    return result;
-  } catch (err) {
-    throw err;
-  } finally {
-    await client.end();
-  }
 }
 
 async function setup() {

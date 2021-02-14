@@ -1,4 +1,5 @@
 module.exports = {
+
   env: {
     browser: true,
     es2021: true,
@@ -11,5 +12,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    // Leyfum console.info, warn og error
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+    'no-useless-escape': 0,
   },
 };

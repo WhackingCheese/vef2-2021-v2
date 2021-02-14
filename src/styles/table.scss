@@ -1,8 +1,36 @@
-table, tr, td, th {
-    border: 1px solid black;
+table,
+tr,
+td,
+th {
+  border: 1px solid #000;
 }
 
 .table {
-    border-collapse: collapse;
+  border-collapse: collapse;
+
+  &_title {
     margin: 5px;
+  }
+
+  &_fr {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+.table-entry {
+  margin: 5px;
+  padding: 5px;
+
+  &_date {
+    min-width: 120px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &_name {
+    min-width: 120px;
+    text-align: center;
+    vertical-align: middle;
+  }
 }

@@ -1,93 +1,92 @@
-@import './vars.scss';
+@import './vars';
 
 .form {
-    font-size: 1em;
+  font-size: 1em;
 
-    &_title {
-        display: flex;
-        font-size: 2.5em;
-        justify-content: center;
-    }
+  &_title {
+    display: flex;
+    font-size: 2.5em;
+    justify-content: center;
+  }
+}
 
-    &_input {
-        &_exp {
-            display: inline-flex;
-            margin-top: 1em;
-            width: $label-width;
-        }
+.form-input {
+  &_exp {
+    display: inline-flex;
+    margin-top: 1em;
+    width: $label-width;
+  }
 
-        &_text {
-            background-color: $input-color;
-            height: 2em;
-            margin-top: 1em;
-            width: calc(100% - #{$label-width + 10px});
-        }
+  &_text {
+    background-color: $input-color;
+    height: 2em;
+    margin-top: 1em;
+    width: calc(100% - #{$label-width + 10px});
+  }
 
-        &_textr {
-            background-color: $input-error;
-            height: 2em;
-            margin-top: 1em;
-            width: calc(100% - #{$label-width + 10px});
-        }
+  &_textr {
+    background-color: $input-error;
+    height: 2em;
+    margin-top: 1em;
+    width: calc(100% - #{$label-width + 10px});
+  }
 
-        &_textarea {
-            background-color: $input-color;
-            height: 4em;
-            margin-top: 1em;
-            width: calc(100% - #{$label-width + 10px});
-        }
+  &_textarea {
+    background-color: $input-color;
+    height: 4em;
+    margin-top: 1em;
+    width: calc(100% - #{$label-width + 10px});
+  }
 
-        &_textarear {
+  &_textarear {
+    background-color: $input-error;
+    height: 4em;
+    margin-top: 1em;
+    width: calc(100% - #{$label-width + 10px});
+  }
 
-            background-color: $input-error;
-            height: 4em;
-            margin-top: 1em;
-            width: calc(100% - #{$label-width + 10px});
-        }
+  &_anon {
+    display: inline-block;
+    margin-top: 18px;
+  }
 
-        &_anon {
-            margin-top: 18px;
-            display: inline-block;
-        }
-
-        &_submit {
-            background-color: $input-color;
-            border: 1px solid $font-color;
-            border-radius: 7px;
-            font-size: 1.5em;
-            height: 2em;
-            width: 8em;
-        }
-    }
+  &_submit {
+    background-color: $input-color;
+    border: 1px solid $font-color;
+    border-radius: 7px;
+    font-size: 1.5em;
+    height: 2em;
+    width: 8em;
+  }
 }
 
 .errors {
-    &_header {
-        display: flex;
-        justify-content: center;
-    }
+  &_header {
+    display: flex;
+    justify-content: center;
+  }
 
-    &_list {
-        text-align: center;
-        list-style: none;
-    }
+  &_list {
+    list-style: none;
+    text-align: center;
+  }
 
-    &_item {
-        display: inline-block;
-    }
+  &_item {
+    display: inline-block;
+  }
 }
 
 .centering {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 textarea {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 .break {
-    width: 100%;
-    border-top: 1px dotted;
+  border-top: 1px dotted;
+  width: 100%;
 }

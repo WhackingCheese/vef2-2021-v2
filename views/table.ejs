@@ -6,10 +6,10 @@
             <th class="table_fr">Athugasemd</th>
         </tr>
         <% signatures.forEach((signature) => { %>
-            <tr class="table_entry">
-                <td class="table_entry_date"><%= new Date(signature.signed).toLocaleDateString().replaceAll('/', '.') %></td>
-                <td class="table_entry_name"><%= signature.name %></td>
-                <td class="table_entry_comment"><%= signature.comment %></td>
+            <tr class="table-entry">
+                <td class="table-entry_date"><%= new Date(signature.signed).toLocaleDateString().replaceAll('/', '.') %></td>
+                <td class="table-entry_name"><%= signature.name %></td>
+                <td class="table-entry_comment"><%= signature.comment %></td>
             </tr>
         <% }); %>
     </table>

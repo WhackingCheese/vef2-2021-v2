@@ -1,36 +1,36 @@
 <%- include('head.ejs') -%>
 <body>
     <div class="form">
-        <h1 class=form_title><%= title %></h1>
-        <form class="form_input" action="/" method="POST">
-            <label for="name" class="form_input_exp">Nafn*</label>
+        <h1 class=form-title><%= title %></h1>
+        <form class="form-input" action="/" method="POST">
+            <label for="name" class="form-input_exp">Nafn*</label>
             <% if (!locals.validations.name) { %>
-                <input name="name" id="name" class="form_input_text" type="text">
+                <input name="name" id="name" class="form-input_text" type="text">
             <% } else { %>
-                <input name="name" id="name" class="form_input_textr" type="text">
+                <input name="name" id="name" class="form-input_textr" type="text">
             <% } %>
             <br>
-            <label for="ssid" class="form_input_exp">Kennitala*</label>
+            <label for="ssid" class="form-input_exp">Kennitala*</label>
             <% if (!locals.validations.ssid) { %>
-                <input name="ssid" id="ssid" class="form_input_text" type="text" placeholder="000000-0000">
+                <input name="ssid" id="ssid" class="form-input_text" type="text" placeholder="000000-0000">
             <% } else { %>
-                <input name="ssid" id="ssid" class="form_input_textr" type="text" placeholder="000000-0000">
+                <input name="ssid" id="ssid" class="form-input_textr" type="text" placeholder="000000-0000">
             <% } %>
             <br>
-            <label for="comment" class="form_input_exp">Athugasemd:</label>
+            <label for="comment" class="form-input_exp">Athugasemd:</label>
             <% if (!locals.validations.comment) { %>
-                <textarea name="comment" id="comment" class="form_input_textarea"></textarea>
+                <textarea name="comment" id="comment" class="form-input_textarea"></textarea>
             <% } else { %>
-                <textarea name="comment" id="comment" class="form_input_textarear"></textarea>
+                <textarea name="comment" id="comment" class="form-input_textarear"></textarea>
             <% } %>
             <br>
             <div class="centering">
-                <input  name="anon" id="anon" class="form_input_anon" type="checkbox">
-                <label for="anon" class="form_input_anon">Ekki birta nafn á lista</label>
+                <input  name="anon" id="anon" class="form-input_anon" type="checkbox">
+                <label for="anon" class="form-input_anon">Ekki birta nafn á lista</label>
             </div>
             <br>
             <div class="centering">
-                <input type="submit" class="form_input_submit" value="Skrifa undir">
+                <input type="submit" class="form-input_submit" value="Skrifa undir">
             </div>
         </form>
         <% if (locals.validations.name || locals.validations.comment || locals.validations.ssid) { %>

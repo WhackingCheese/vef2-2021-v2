@@ -1,9 +1,8 @@
 const path = require('path');
 const express = require('express');
+const dotenv = require('dotenv');
 const registration = require('./src/registration');
 const { setup } = require('./src/db');
-const dotenv = require('dotenv');
-
 
 dotenv.config();
 
